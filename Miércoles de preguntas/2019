@@ -1,0 +1,60 @@
+#Pregunta:
+quiero armar un script para backup de sitio Wordpress (ubuntu server). copiar y comprimir wp-content + BD mysql puedo encontrar. Pero luego qué hago con ese archivo comprimido? Lo subo a alguna nube?
+
+#Respuestas:
+Contrapregunta: Por qué querés usar un script y no un plugin de WP ?
+Incluso debe haber alguno que te sincronice con dropbox o drive
+Y, no sé Drive, pero Dropbox tiene versionado de archivos
+la subida a la nube la podés hacer con algún cli de Dropbox o Mega
+igual, practicá en local primero, después probá en producción pero con una carpeta de prueba y andá implementándolo de a poco because shit happens
+Si, cuanto mas plugins pongas es un potencial punto de vulnerabilidad. Siempre que se pueda hay que evitarlo
+El plugin que no te puede faltar es iThemes Security
+investigá backups incrementales y diferenciales
+también podés chusmear syncthing para sincronizar con otra máquina
+fijate esto, por ahí también te puede servir: https://rsnapshot.org/
+por mencionarte herramientas que te pueden servir en el camino, tar, rsync y git
+
+#Pregunta:
+¿Alguien me recomienda un buen tutorial práctico de docker/compose? lo que quiero es un crash course para poder bajar y correr un container cada tanto
+
+#Respuestas:
+el de docker :) https://www.docker.com/get-started
+hay un curso de un tal bret fisher que es bastante completo, pero podes bajarlo e ir a la parte de compose, es bastante al punto
+https://www.thepiratebay.org/torrent/33026480/Docker_Mastery__The_Complete_Toolset_From_a_Docker_Captain
+
+#Pregunta:
+cuántxs de acá probaron laburar de freelancer y cómo fue su experiencia?
+
+#Respuestas:
+una subpregunta podría ser: ¿usan algún portal tipo workana, upwork, freelancer...?
+https://www.mturk.com
+https://thehustle.co/making-money-on-amazon-mechanical-turk/
+
+#Pregunta:
+alguna recomendación para conseguir un primer laburo de desarrollador?
+
+#Respuestas:
+te puedo dar mi opinión, que no está respaldada por hechos, porque yo trabajo por cuenta propia: 
+Creo que sirve tener título o estar terminando carrera, pero también demostrar interés en la tecnología que manejás, tener proyectos propios, algún repo con algunas cositas
+no necesariamente tener grandes proyectos, ni hablar de tener algo montado que funcione como un negocio o potencial negocio, porque lo van a ver como algo que te va a consumir tiempo y atención
+yo iba por un camino distinto: proyectos y contactos
+la experiencia no sólo viene del lado laboral. si tenés una idea y tiempo hacela, ponele tu nombre. mucho mejor si es de código abierto
+participar en proyectos que ya existen o generar tu propia movida es un boost tremendo
+demostrar que podés trabajar con otra gente es importante
+en mi experiencia el boost laboral vino por ese lado: una idea cuasi absurda, una semana aprendiendo ruby y programando mal (porque no podés aprender ruby  on rails BIEN en una semana, ni cualquier cosa)
+ANTES de eso era sequía, como ahora. mandar CVs sin muchas experiencia, sin contactos y con el miedo de no saber x cosa resultó contraproducente
+NUNCA enganché un laburo por computrabajo ni nada similar
+entonces el mejor consejo que te puedo dar es ese: armate o unite a una comunidad, sacá los contactos con los que congenies y producí
+producí hasta la idea más boluda que tengas
+
+
+#Pregunta:
+alguien tiene un proyecto interesante del que pueda contar algo?
+
+#Respuestas:
+Yo estoy desarrollando para una empresa de España una app Android que busca impresorasa en la red y usa un servicio en la nube que hace machine learning para calcular los niveles de consumibles, cuándo se van a terminar, cuántos días quedan, el rendimiento, etc. Usa protocolos NSD y SNMP
+yo hice una infraestructura para IOT usando tecnología LoRa para la facu, para mandar pocos datos desde un nodo, a traves de un conecntrador a la nube. Tuvimos alcances de más de un km en barrio echesortu. lo bueno es que tiene demasiada robustez en ambientes ruidosos, muuuy bajo consumo (se habla de 5 años con una bateria común y corriente). tiene posibilidad de geolocalizacion. pero maaaaaaas o menos a groso modo tendrias una infraestructura que soporte unos 10000 nodos por 300 a 500 dolares. y trabaja en banda libre, por lo que no pagas nada
+bueno, si necesitan hacer una app para leer los datos por USB-Serial avisame que tengo la mitad hecha
+Otro proyecto que hicimos fue un clasificador de tapitas de plástico por color
+para quienes no saben y les interesa: opencv es una librería para computer vision (todo lo que es detección de formas, procesamiento de imagen, reconocimiento facial, etc) que tiene versiones hasta en python. es la más usada todavía. no?
+
