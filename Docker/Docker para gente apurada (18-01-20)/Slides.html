@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        Docker - CodiMD
+    </title>
+    <link rel="icon" type="image/png" href="http://127.0.0.1:3000/favicon.png">
+    <link rel="apple-touch-icon" href="http://127.0.0.1:3000/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,300italic,300|Source+Serif+Pro|Source+Code+Pro:400,300,500&subset=latin,latin-ext);.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{padding:0 1em;color:#777;border-left:.25em solid #ddd}.night .markdown-body blockquote{color:#bcbcbc}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.night .markdown-body h1,.night .markdown-body h2,.night .markdown-body h3,.night .markdown-body h4,.night .markdown-body h5,.night .markdown-body h6{color:#ddd}.markdown-body h1 .fa-link,.markdown-body h2 .fa-link,.markdown-body h3 .fa-link,.markdown-body h4 .fa-link,.markdown-body h5 .fa-link,.markdown-body h6 .fa-link{color:#000;vertical-align:middle;visibility:hidden;font-size:16px}.night .markdown-body h1 .fa-link,.night .markdown-body h2 .fa-link,.night .markdown-body h3 .fa-link,.night .markdown-body h4 .fa-link,.night .markdown-body h5 .fa-link,.night .markdown-body h6 .fa-link{color:#fff}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .fa-link,.markdown-body h2:hover .anchor .fa-link,.markdown-body h3:hover .anchor .fa-link,.markdown-body h4:hover .anchor .fa-link,.markdown-body h5:hover .anchor .fa-link,.markdown-body h6:hover .anchor .fa-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.night .markdown-body table tr{background-color:#5f5f5f}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.night .markdown-body table tr:nth-child(2n){background-color:#4f4f4f}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.night .markdown-body code,.night .markdown-body tt{color:#eee;background-color:hsla(0,0%,90.2%,.36)}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\A0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.markdown-body kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid;border-color:#ccc #ccc #bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important}.markdown-body pre{border:inherit!important}.night .markdown-body pre{filter:invert(100%)}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-webkit-inline-flex;display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.night .markdown-body .gist table tr:nth-child(2n){background-color:#ddd}.markdown-body code[data-gist-id]{background:none;padding:0;filter:invert(100%)}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram{text-align:center;background-color:inherit;border-radius:0;white-space:inherit}.night .markdown-body pre.graphviz .graph>polygon{fill:#333}.night .markdown-body pre.mermaid .sectionTitle,.night .markdown-body pre.mermaid .titleText,.night .markdown-body pre.mermaid text{fill:#fff}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg{max-width:100%;height:100%}.night .markdown-body .abc path{fill:#eee}.night .markdown-body .abc path.note_selected{fill:##4DD0E1}.night tspan{fill:#fefefe}.night pre rect{fill:transparent}.night pre.flow-chart path,.night pre.flow-chart rect{stroke:#fff}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body img{background-color:transparent}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;-webkit-transition:opacity .2s;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;-webkit-transition:opacity .2s;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}.ui-infobar{position:relative;z-index:2;max-width:758px;margin-top:25px;margin-bottom:-25px;color:#777}.toc .invisable-node{list-style-type:none}.ui-toc{position:fixed;bottom:20px;z-index:10000}.ui-toc-label{opacity:.3;background-color:#ccc;border:none}.ui-toc-label,.ui-toc .open .ui-toc-label{-webkit-transition:opacity .2s;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;-webkit-transition:opacity .2s;transition:opacity .2s}.ui-toc-dropdown{margin-top:23px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child>ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.night .ui-toc-dropdown .nav>li>a:focus,.night .ui-toc-dropdown .nav>li>a:hover{color:#fff;border-left-color:#fff}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.night .ui-toc-dropdown .nav>.active:focus>a,.night .ui-toc-dropdown .nav>.active:hover>a,.night .ui-toc-dropdown .nav>.active>a{color:#fff;border-left:2px solid #fff}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.night .ui-toc-dropdown .nav>li>a{color:#aaa}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,"\30D2\30E9\30AE\30CE\89D2\30B4   Pro W3",Osaka,Meiryo,"\30E1\30A4\30EA\30AA",MS Gothic,"\FF2D\FF33   \30B4\30B7\30C3\30AF",sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}.ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,"\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF",sans-serif}.markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang TC,Microsoft JhengHei,"\5FAE\8EDF\6B63\9ED1",sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}.ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,"\5FAE\8EDF\6B63\9ED1UI",sans-serif}.markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang SC,Microsoft YaHei,"\5FAE\8F6F\96C5\9ED1",sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}.ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,"\5FAE\8F6F\96C5\9ED1UI",sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:contain}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}small span{line-height:22px}small .dropdown{display:inline-block}small .dropdown a:focus,small .dropdown a:hover{text-decoration:none}.unselectable{-moz-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-o-user-select:none;user-select:none}.night .navbar{background:#333;border-bottom-color:#333;color:#eee}.night .navbar a{color:#eee}.markdown-body h1[id]:before,.markdown-body h2[id]:before,.markdown-body h3[id]:before,.markdown-body h4[id]:before,.markdown-body h5[id]:before,.markdown-body h6[id]:before{display:block;content:" ";margin-top:-55px;height:55px;visibility:hidden}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}.markdown-body.slides aside.notes{display:none}.markdown-body.slides ol,.markdown-body.slides ul{display:inline-block;text-align:left;margin:0 0 0 1em;padding:0}.markdown-body.slides table{width:50%;margin:0 auto;border-collapse:collapse;border-spacing:0;display:table}.markdown-body.slides table td,.markdown-body.slides table th{text-align:left;padding:.2em .5em;border:none;border-bottom:1px solid}.markdown-body.slides table tr{border-top:0;background-color:#fff}.markdown-body.slides table tr:nth-child(2n){background-color:inherit}.markdown-body.slides table tbody tr:last-child td,.markdown-body.slides table tbody tr:last-child th{border-bottom:none}.markdown-body.slides h1,.markdown-body.slides h2{border-bottom:0}.night .markdown-body.slides h1,.night .markdown-body.slides h2,.night .markdown-body.slides h3,.night .markdown-body.slides h4,.night .markdown-body.slides h5,.night .markdown-body.slides h6{color:#000}.markdown-body section>section:last-child{margin-bottom:1.5em!important}.ui-view-area.black{background-color:#000!important}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}.focus,:focus{outline:none!important}::-moz-focus-inner{border:0!important}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid slides"><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h1 id="Docker"><a class="anchor hidden-xs" href="#Docker" title="Docker"><i class="fa fa-link"></i></a>Docker</h1>
+<h3 id="para-gente-apurada"><a class="anchor hidden-xs" href="#para-gente-apurada" title="para-gente-apurada"><i class="fa fa-link"></i></a>para gente apurada</h3>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h2 id="Hackfun"><a class="anchor hidden-xs" href="#Hackfun" title="Hackfun"><i class="fa fa-link"></i></a>Hackfun</h2>
+<p><a href="http://hackfunrosario.com" target="_blank">hackfunrosario.com</a></p>
+</div></section><section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h2 id="Qué"><a class="anchor hidden-xs" href="#Qué" title="Qué"><i class="fa fa-link"></i></a>Qué</h2>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="“Serie-de-productos-SaaS-que-utiliza-virtualización-a-nivel-de-OS-para-producir-software-empaquetado-en-forma-de-contenedores”"><a class="anchor hidden-xs" href="#“Serie-de-productos-SaaS-que-utiliza-virtualización-a-nivel-de-OS-para-producir-software-empaquetado-en-forma-de-contenedores”" title="“Serie-de-productos-SaaS-que-utiliza-virtualización-a-nivel-de-OS-para-producir-software-empaquetado-en-forma-de-contenedores”"><i class="fa fa-link"></i></a>“Serie de productos SaaS que utiliza virtualización a nivel de OS para producir software empaquetado en forma de <strong>contenedores</strong>”</h4>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="“Docker-es-una-herramienta-para-empaquetar-una-aplicación-junto-con-sus-dependencias-en-un-contenedor-virtual-que-puede-ejecutarse-en-cualquier-plataforma”"><a class="anchor hidden-xs" href="#“Docker-es-una-herramienta-para-empaquetar-una-aplicación-junto-con-sus-dependencias-en-un-contenedor-virtual-que-puede-ejecutarse-en-cualquier-plataforma”" title="“Docker-es-una-herramienta-para-empaquetar-una-aplicación-junto-con-sus-dependencias-en-un-contenedor-virtual-que-puede-ejecutarse-en-cualquier-plataforma”"><i class="fa fa-link"></i></a>“Docker es una herramienta para empaquetar una aplicación junto con sus dependencias en un contenedor virtual que puede ejecutarse en cualquier plataforma*”</h4>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h3 id="¿Gestor-de-paquetes"><a class="anchor hidden-xs" href="#¿Gestor-de-paquetes" title="¿Gestor-de-paquetes"><i class="fa fa-link"></i></a>¿Gestor de paquetes?</h3>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h3 id="¿VM"><a class="anchor hidden-xs" href="#¿VM" title="¿VM"><i class="fa fa-link"></i></a>¿VM?</h3>
+</div></section></section><section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h2 id="Para-qué"><a class="anchor hidden-xs" href="#Para-qué" title="Para-qué"><i class="fa fa-link"></i></a>Para qué</h2>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<p><span class="fragment" data-fragment-index="1"><!-- -->Entorno de desarrollo local == remoto / producción</span></p>
+<p><span class="fragment" data-fragment-index="2"><!-- -->Forma “limpia” de instalar/probar software</span></p>
+<p><span class="fragment" data-fragment-index="3"><!-- -->Forma simple de instalar servicios complejos</span></p>
+<p><span class="fragment" data-fragment-index="4"><!-- -->Múltiples instancias de la misma app</span></p>
+</div></section></section><section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h2 id="Cómo"><a class="anchor hidden-xs" href="#Cómo" title="Cómo"><i class="fa fa-link"></i></a>Cómo</h2>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h3 id="Instalación"><a class="anchor hidden-xs" href="#Instalación" title="Instalación"><i class="fa fa-link"></i></a>Instalación</h3>
+<p>Debian -&gt; +repo, +keys, +paquete con apt</p>
+<p>Arch -&gt; Community</p>
+<p>Windows/Mac -&gt; Docker Desktop</p>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="Opcional-en-Linux"><a class="anchor hidden-xs" href="#Opcional-en-Linux" title="Opcional-en-Linux"><i class="fa fa-link"></i></a>(Opcional en Linux)</h4>
+<p><span class="fragment" data-fragment-index="1"><!-- -->Agregar usuario a grupo <code>docker</code></span></p>
+<p><span class="fragment" data-fragment-index="2"><!-- -->Instalar <code>bash completion</code></span></p>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="Palabras-clave"><a class="anchor hidden-xs" href="#Palabras-clave" title="Palabras-clave"><i class="fa fa-link"></i></a>Palabras clave</h4>
+<p><span class="fragment" data-fragment-index="1"><!-- -->“Imágen”</span></p>
+<p><span class="fragment" data-fragment-index="2"><!-- -->“Contenedor/Container”</span></p>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="Palabras-clave-imagen"><a class="anchor hidden-xs" href="#Palabras-clave-imagen" title="Palabras-clave-imagen"><i class="fa fa-link"></i></a>Palabras clave (imagen)</h4>
+<p><span class="fragment" data-fragment-index="1"><!-- --><code>pull</code> -&gt; descarga imágen</span></p>
+<p><span class="fragment" data-fragment-index="2"><!-- --><code>run</code> -&gt; crea container</span></p>
+<p><span class="fragment" data-fragment-index="3"><!-- --><code>rm</code> -&gt; elimina imágen</span></p>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="Palabras-clave-container"><a class="anchor hidden-xs" href="#Palabras-clave-container" title="Palabras-clave-container"><i class="fa fa-link"></i></a>Palabras clave (container)</h4>
+<p><span class="fragment" data-fragment-index="1"><!-- --><code>start</code> -&gt; arrancar contenedor</span></p>
+<p><span class="fragment" data-fragment-index="2"><!-- --><code>stop</code> -&gt; detiene ejecución</span></p>
+<p><span class="fragment" data-fragment-index="3"><!-- --><code>rm</code> -&gt; elimina contenedor</span></p>
+</div></section></section><section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="docker"><a class="anchor hidden-xs" href="#docker" title="docker"><i class="fa fa-link"></i></a><code>docker</code></h4>
+<pre><code>docker info
+docker --help
+docker &lt;comando&gt; --help
+</code></pre>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="docker-run"><a class="anchor hidden-xs" href="#docker-run" title="docker-run"><i class="fa fa-link"></i></a><code>docker run</code></h4>
+<pre><code>docker run --help
+docker run &lt;imagen&gt;
+</code></pre>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="hello-world-"><a class="anchor hidden-xs" href="#hello-world-" title="hello-world-"><i class="fa fa-link"></i></a>hello-world ??</h4>
+<p><code>docker run hello-world</code></p>
+<p><span class="fragment" data-fragment-index="1"><!-- -->1. Busca imágen llamada <code>hello-world</code> en local</span></p>
+<p><span class="fragment" data-fragment-index="2"><!-- -->1.1 Busca en docker hub</span></p>
+<p><span class="fragment" data-fragment-index="3"><!-- -->1.2 Descarga</span></p>
+<p><span class="fragment" data-fragment-index="4"><!-- -->2. Crea container</span></p>
+<p><span class="fragment" data-fragment-index="5"><!-- -->3. Corre container</span></p>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="“Tipos”-de-contenedores"><a class="anchor hidden-xs" href="#“Tipos”-de-contenedores" title="“Tipos”-de-contenedores"><i class="fa fa-link"></i></a>“Tipos” de contenedores</h4>
+<p><span class="fragment" data-fragment-index="1"><!-- -->Se ejecutan y terminan</span></p>
+<p><span class="fragment" data-fragment-index="2"><!-- -->Se ejecutan y siguen en ejecución</span></p>
+<p><span class="fragment" data-fragment-index="3"><!-- -->Se usan interactivamente</span></p>
+</div></section><section data-markdown="" data-markdown-parsed="true"><div><h4 id="Correr-como-daemon"><a class="anchor hidden-xs" href="#Correr-como-daemon" title="Correr-como-daemon"><i class="fa fa-link"></i></a>Correr como daemon</h4>
+<pre><code>docker run -d &lt;imagen&gt;
+</code></pre>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="docker-ps"><a class="anchor hidden-xs" href="#docker-ps" title="docker-ps"><i class="fa fa-link"></i></a>docker ps</h4>
+<pre><code>docker ps  // muestra contenedores en ejecución
+docker ps -a  // muestra todos los contenedores
+</code></pre>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="run--stop--rm"><a class="anchor hidden-xs" href="#run--stop--rm" title="run--stop--rm"><i class="fa fa-link"></i></a>run / stop / rm</h4>
+<pre><code>docker run &lt;imagen&gt;  // Sigue en ejecución*
+docker stop &lt;id&gt;
+(opcional) docker rm &lt;id&gt;
+</code></pre>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="Otros-parámetros-útiles"><a class="anchor hidden-xs" href="#Otros-parámetros-útiles" title="Otros-parámetros-útiles"><i class="fa fa-link"></i></a>Otros parámetros útiles</h4>
+<p>Eliminar container al finalizar la ejecución:</p>
+<pre><code>docker run --rm &lt;imagen&gt;
+</code></pre>
+<p>Mapear puerto local a puerto del container:</p>
+<pre><code>docker run -p 1234:80 &lt;imagen&gt;
+</code></pre>
+<p>Definir un nombre personalizado</p>
+<pre><code>docker run --name micontenedor &lt;imagen&gt;
+</code></pre>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="Otros-parámetros-interacción"><a class="anchor hidden-xs" href="#Otros-parámetros-interacción" title="Otros-parámetros-interacción"><i class="fa fa-link"></i></a>Otros parámetros (interacción)</h4>
+<p>Comando dentro de container en ejecución:</p>
+<pre><code>docker exec &lt;id&gt; &lt;comando&gt;
+</code></pre>
+<p>Modo interactivo* (nuevo container):</p>
+<pre><code>docker run -it &lt;imagen&gt; /bin/bash
+</code></pre>
+<p>Modo interactivo (container en ejecución):</p>
+<pre><code>docker exec -it  &lt;id&gt; bash
+</code></pre>
+</div></section></section><section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h3 id="Volumes"><a class="anchor hidden-xs" href="#Volumes" title="Volumes"><i class="fa fa-link"></i></a>Volumes</h3>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="docker-run--v"><a class="anchor hidden-xs" href="#docker-run--v" title="docker-run--v"><i class="fa fa-link"></i></a><code>docker run -v</code></h4>
+<pre><code>docker run -v /ruta/local:/ruta/interna ...
+</code></pre>
+<pre><code>docker run -v /home/user/miweb:/usr/share/nginx/html ...
+</code></pre>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="Otros-parámetros-información"><a class="anchor hidden-xs" href="#Otros-parámetros-información" title="Otros-parámetros-información"><i class="fa fa-link"></i></a>Otros parámetros (información)</h4>
+<p>Información (sistema)</p>
+<pre><code>docker info
+</code></pre>
+<p>Espacio en uso</p>
+<pre><code>docker system df [-v]
+</code></pre>
+<p>Inspeccionar contenedor</p>
+<pre><code>docker inspect &lt;id&gt;
+</code></pre>
+<p>Logs</p>
+<pre><code>docker logs &lt;id&gt;
+</code></pre>
+</div></section></section><section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h3 id="docker-compose"><a class="anchor hidden-xs" href="#docker-compose" title="docker-compose"><i class="fa fa-link"></i></a>docker-compose</h3>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<pre><code>docker-compose.yml:
+</code></pre>
+<pre><code class="dockerfile hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span></div><div class="code"><span class="hljs-deletion">- version:</span>
+<span class="hljs-deletion">- services:</span>
+  - un_servicio:
+    - image:
+    - ports:
+    - volumes:
+    - restart:
+    ...
+
+  - otro_servicio:
+    - image:
+    - ports:
+    - volumes:
+    - restart:
+    ...
+
+<span class="hljs-deletion">- volumes:</span>
+  - mi_volumen1
+  - mi_volumen2
+  ...
+
+</div></div></code></pre>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<pre><code>restart: [no, always, on-failure, unless-stopped]
+</code></pre>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<pre><code>docker-compose up [-d]
+</code></pre>
+<pre><code>docker-compose ps
+</code></pre>
+<pre><code>docker-compose stop
+</code></pre>
+</div></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h3 id="Portainer"><a class="anchor hidden-xs" href="#Portainer" title="Portainer"><i class="fa fa-link"></i></a>Portainer</h3>
+<p><a href="http://portainer.io/installation" target="_blank">portainer.io/installation</a></p>
+</div></section></section><section data-markdown="" data-markdown-parsed="true" data-background="https://i.imgur.com/Vf1T8rT.jpg"><div><!-- -->
+<h4 id="Material"><a class="anchor hidden-xs" href="#Material" title="Material"><i class="fa fa-link"></i></a>Material</h4>
+<ul>
+<li><a href="https://github.com/wsargent/docker-cheat-sheet" target="_blank">https://github.com/wsargent/docker-cheat-sheet</a></li>
+<li><a href="https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction/" target="_blank">https://developers.redhat.com/blog/2018/02/22/container-terminology-practical-introduction/</a></li>
+</ul>
+</div></section></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
+        <div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
